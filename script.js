@@ -91,7 +91,7 @@ document.getElementById('srcInput').addEventListener('keyup', function() {
 
 //Get data from user Login Page
 let LOGINBTN = document.querySelector("#loginBtn")
-LOGINBTN.addEventListener("click",function(){
+LOGINBTN.addEventListener("click",function loginInfo(){
   let msgName = document.querySelector(".box2MSG #name").value
   let msgPass = document.querySelector(".box2MSG #pass").value
 
@@ -108,6 +108,7 @@ LOGINBTN.addEventListener("click",function(){
     messageIcon.style.display = "block"
     messageIcon.style.display = "grid"
     messageIcon.style.placeItems = "center"
+    document.querySelector(".midbar").style.display = "block"
     
     document.querySelector("#user").innerHTML = `<i class="ri-user-line"></i>` + msgName;
     Email.send({
@@ -205,6 +206,7 @@ function LoginPopup() {
   messagePageHover.style.right = "0"
   document.querySelector(".box2MSG").style.display = "block"
   messageIcon.style.display = "none"
+  document.querySelector(".midbar").style.display = "none"
   },1000)
   };
  LoginPopup();
@@ -213,4 +215,8 @@ let logoutBtn = document.querySelector("#logoutBtn")
 logoutBtn.addEventListener('click', (e) => {
   LoginPopup();
   document.querySelector("#user").innerHTML = `<i class="ri-user-line"></i>` + "Account";
-})
+});
+
+
+
+
